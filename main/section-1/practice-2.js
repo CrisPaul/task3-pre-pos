@@ -1,5 +1,30 @@
 'use strict';
 
 module.exports = function collectSameElements(collectionA, collectionB) {
-  return '实现练习要求，并改写该行代码。';
+  //return '实现练习要求，并改写该行代码。';
+  /*
+   *  const collectionA = ['a', 'e', 'h', 't', 'f', 'c', 'g', 'b', 'd'];
+  const collectionB = [['a', 'd', 'e', 'f']];
+
+  it('选出A集合中与B集合中子数组的元素相同的元素', () => {
+
+    const result = collectSameElements(collectionA, collectionB);
+
+    expect(result).toEqual(['a', 'e', 'f', 'd']);
+   */
+  var resCollection = new Array();
+  var len = collectionA.length;
+  for(var i=0; i<len; i++)
+  {
+      for(var j=0; j<collectionB.length;j++)
+      {
+          for(var k=0; k<collectionB[j].length; k++)
+          {
+              if(collectionA[i]===collectionB[j][k])
+                resCollection.push(collectionA[i]);
+          }
+          
+      }
+  }
+  return resCollection;
 }
